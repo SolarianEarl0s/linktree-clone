@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,26 +27,64 @@
             filter: blur(3px);
             z-index: -1;
         }
+        
+        .paypal-support-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #ffc439 0%, #ffb700 100%);
+            border: 2px solid #cc9500;
+            border-radius: 8px;
+            color: #003087;
+            font-weight: bold;
+            font-size: 16px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 193, 7, 0.4);
+            margin-bottom: 20px;
+        }
+        
+        .paypal-support-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 193, 7, 0.6);
+            background: linear-gradient(135deg, #ffb700 0%, #ffc439 100%);
+        }
+        
+        .paypal-support-btn img {
+            height: 24px;
+            width: auto;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="profile-section">
-            <img src="assets/images/Warrior-of-the-Radiant-Skies.jpg" alt="Profile" class="logo" />
+            <img src="assets/images/Warrior-of-the-Radiant-Skies.jpg" alt="Profile" class="logo">
             <h1>Arthur</h1>
             <p>Welcome to my profile</p>
         </div>
+        
+        <!-- PayPal Support Section -->
+        <div style="text-align: center; margin: 30px 0;">
+            <a href="https://www.paypal.com/ncp/payment/PJ4ZXKCPUVB58" class="paypal-support-btn" title="Support via PayPal">
+                <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_37x23.jpg" alt="PayPal">
+                If you want to support this project
+            </a>
+        </div>
+        
         <div class="links-section">
             <a class="link-btn" href="https://www.tiktok.com/@solarianearl" title="TikTok: solarianearl (Arthur)">
-                <img src="assets/images/tiktok.png" alt="TikTok" class="icon" />
+                <img src="assets/images/tiktok.png" alt="TikTok" class="icon">
                 TikTok: solarianearl (Arthur)
             </a>
             <a class="link-btn" href="https://www.tiktok.com/@kentoclark" title="TikTok: @Kentoclark (Ken Clark)">
-                <img src="assets/images/tiktok.png" alt="TikTok" class="icon" />
+                <img src="assets/images/tiktok.png" alt="TikTok" class="icon">
                 TikTok: @Kentoclark (Ken Clark)
             </a>
             <a class="link-btn" href="https://www.youtube.com/@Game4Digital" title="YouTube: @Game4Digital">
-                <img src="assets/images/youtube.png" alt="YouTube" class="icon" />
+                <img src="assets/images/youtube.png" alt="YouTube" class="icon">
                 YouTube: @Game4Digital
             </a>
         </div>
