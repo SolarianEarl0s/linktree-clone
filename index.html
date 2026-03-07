@@ -7,29 +7,104 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * { margin: 0; padding: 0; box-sizing: border-box; transition: all 0.3s ease; }
+        html { scroll-behavior: smooth; }
         body { font-family: 'Raleway', sans-serif; background: #0f0f1e; color: #e0e0e0; line-height: 1.6; overflow-x: hidden; }
+        
+        /* Navigation */
         nav { position: sticky; top: 0; background: rgba(26, 26, 46, 0.95); backdrop-filter: blur(10px); padding: 1rem 0; z-index: 1000; border-bottom: 2px solid #ff6b35; }
         nav ul { display: flex; justify-content: center; flex-wrap: wrap; list-style: none; gap: 2rem; max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
-        nav a { color: #e0e0e0; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: color 0.3s ease; }
-        nav a:hover { color: #ff6b35; }
-        .hero { position: relative; height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; }
-        .hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('assets/images/Warrior-of-the-Radiant-Skies.jpg') no-repeat center center; background-size: cover; filter: brightness(0.4); z-index: -1; }
-        .hero-content { z-index: 1; max-width: 900px; padding: 2rem; }
-        .hero h1 { font-family: 'Cinzel', serif; font-size: 4rem; font-weight: 700; color: #ffb84d; text-shadow: 0 0 20px rgba(255, 184, 77, 0.5); margin-bottom: 1rem; }
-        .hero p { font-size: 1.5rem; color: #e0e0e0; margin-bottom: 2rem; font-weight: 300; }
-        section { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; }
-        section h2 { font-family: 'Cinzel', serif; font-size: 2.5rem; color: #ffb84d; margin-bottom: 3rem; text-align: center; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; }
-        .card { background: rgba(26, 26, 46, 0.6); border: 2px solid #ff6b35; border-radius: 10px; padding: 1.5rem; transition: transform 0.3s ease; }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4); }
-        .card h3 { font-family: 'Cinzel', serif; color: #ffb84d; margin-bottom: 1rem; }
-        .btn { display: inline-block; padding: 0.75rem 1.5rem; background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%); color: #fff; text-decoration: none; border-radius: 5px; font-weight: 600; margin-top: 1rem; }
-        .social-footer { background: #1a1a2e; padding: 3rem 2rem; text-align: center; }
-        .social-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem; }
-        .social-btn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 24px; border: 2px solid #ff6b35; border-radius: 8px; color: #e0e0e0; text-decoration: none; font-weight: 600; }
-        footer { background: #0f0f1e; padding: 2rem; text-align: center; color: #888; }
+        nav a { color: #e0e0e0; text-decoration: none; font-weight: 600; font-size: 1.1rem; }
+        nav a:hover { color: #ff6b35; transform: translateY(-2px); }
+
+        /* Hero Section */
+        .hero { 
+            position: relative; 
+            height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            text-align: center; 
+            overflow: hidden;
+            background: url('assets/images/Warrior-of-the-Radiant-Skies.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        .hero::before { 
+            content: ''; 
+            position: absolute; 
+            top: 0; left: 0; width: 100%; height: 100%; 
+            background: rgba(0,0,0,0.5); 
+            z-index: 1; 
+        }
+        .hero-content { z-index: 2; max-width: 900px; padding: 2rem; }
+        .hero h1 { font-family: 'Cinzel', serif; font-size: 4.5rem; font-weight: 700; color: #ffb84d; text-shadow: 0 0 20px rgba(255, 184, 77, 0.5); margin-bottom: 1rem; }
+        .hero p { font-size: 1.5rem; color: #e0e0e0; margin-bottom: 2rem; font-weight: 300; letter-spacing: 1px; }
+
+        /* Sections */
+        section { padding: 6rem 2rem; max-width: 1200px; margin: 0 auto; }
+        section h2 { font-family: 'Cinzel', serif; font-size: 2.8rem; color: #ffb84d; margin-bottom: 3.5rem; text-align: center; position: relative; }
+        section h2::after { content: ''; display: block; width: 60px; height: 3px; background: #ff6b35; margin: 1rem auto; }
+
+        /* Grid & Cards */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; margin-top: 2rem; }
+        .card { 
+            background: rgba(26, 26, 46, 0.6); 
+            border: 1px solid rgba(255, 107, 53, 0.3); 
+            border-radius: 15px; 
+            padding: 2rem; 
+            backdrop-filter: blur(8px);
+            position: relative;
+            overflow: hidden;
+        }
+        .card:hover { 
+            transform: translateY(-10px); 
+            border-color: #ff6b35;
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.2);
+        }
+        .card h3 { font-family: 'Cinzel', serif; color: #ffb84d; margin-bottom: 1.2rem; font-size: 1.5rem; }
+        .card p { font-size: 1rem; color: #ccc; margin-bottom: 1.5rem; }
+
+        /* Buttons */
+        .btn { 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 10px;
+            padding: 0.8rem 1.8rem; 
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%); 
+            color: #fff; 
+            text-decoration: none; 
+            border-radius: 30px; 
+            font-weight: 600; 
+            box-shadow: 0 4px 15px rgba(247, 147, 30, 0.3);
+        }
+        .btn:hover { transform: scale(1.05); box-shadow: 0 6px 20px rgba(247, 147, 30, 0.4); }
+
+        /* Support Section */
+        .social-footer { background: #1a1a2e; padding: 4rem 2rem; text-align: center; border-top: 2px solid #ff6b35; }
+        .social-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem; }
+        .social-btn { 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 12px; 
+            padding: 12px 28px; 
+            border: 2px solid #ff6b35; 
+            border-radius: 50px; 
+            color: #e0e0e0; 
+            text-decoration: none; 
+            font-weight: 600; 
+            background: transparent;
+        }
+        .social-btn:hover { background: #ff6b35; color: #fff; transform: translateY(-3px); }
+
+        footer { background: #0f0f1e; padding: 3rem; text-align: center; color: #888; border-top: 1px solid rgba(255,255,255,0.05); }
+        
+        /* Mobile adjustment */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 3rem; }
+            nav ul { gap: 1rem; }
+        }
     </style>
 </head>
 <body>
@@ -44,72 +119,99 @@
             <li><a href="#support">Support</a></li>
         </ul>
     </nav>
+
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>Tales of Solaria</h1>
-            <p>Art that looks like something you'd find in an exhibition</p>
+            <p>An Original Fantasy Universe brought to life by AI</p>
+            <a href="#about" class="btn">Explore the World</a>
         </div>
     </section>
+
     <section id="about">
         <h2>Welcome to Solaria</h2>
-        <p>Tales of Solaria is an epic fantasy universe brought to life through cutting-edge AI technology (Sora, Suno, OpenArt). Experience a world of magic, conflict, and destiny.</p>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto; font-size: 1.2rem;">
+            Tales of Solaria is an epic fantasy universe brought to life through cutting-edge AI technology. 
+            By leveraging tools like Sora for visuals, Suno for scores, and OpenArt for character design, we've created a world of magic, conflict, and destiny.
+        </p>
     </section>
+
     <section id="books">
         <h2>Legendary Sagas</h2>
         <div class="grid">
             <div class="card">
-                <h3>Book 1 : Evin</h3>
-                <p>On the surface, Evin is a farmer - and yes, he fights for his people against those with power over them. But don't let that fool you into a simple archetype. There is something beneath Evin that readers won't see coming - a depth to his character that makes him far more than the underdog hero he first appears to be.</p>
+                <h3>Book 1: Evin</h3>
+                <p>A farmer who fights for his people, but carries a hidden depth that readers won't see coming.</p>
             </div>
             <div class="card">
-                <h3>Book 2 : Alara</h3>
-                <p>A young nature mage thrust into the role of Grand Elder before she feels ready. Still processing grief, she takes on the burden of mentoring others - all while carrying a power inside her that, if left unchecked, could tear the world apart.</p>
+                <h3>Book 2: Alara</h3>
+                <p>A young nature mage thrust into leadership while grappling with grief and an unstable inner power.</p>
             </div>
             <div class="card">
-                <h3>Book 3 : Sepa</h3>
-                <p>Sepa is the son of a tribal chief - but carrying that name feels more like a weight than a privilege. He struggles with confidence in himself and in his power, and the Rifts tearing through his homeland aren't waiting for him to figure it out. He must find belief in himself before his people - and his world - are swallowed whole.</p>
+                <h3>Book 3: Sepa</h3>
+                <p>A tribal chief's son struggling with confidence as Rifts threaten to swallow his world whole.</p>
             </div>
             <div class="card">
-                <h3>Book 4 : Unity</h3>
-                <p>Unity has already lost Jack and watched her best friend Rose slip away into darkness. Now, with the Queen of Solaria fallen and a catastrophic energy threatening the sky above, she is the last one standing - armed only with a weapon Rose gave her, meant for exactly this moment.</p>
+                <h3>Book 4: Unity</h3>
+                <p>The last standing hero, armed with a weapon of destiny as catastrophic energy threatens the sky.</p>
             </div>
             <div class="card">
-                <h3>Book 5 : The Prince</h3>
-                <p>A young royal in the breathtaking floating kingdom of Koh-i-Noor, who begins to realise that the political world around him is rotten. To save his kingdom's soul, he must grow up fast - and decide what kind of king he wants to be before someone else decides for him.</p>
+                <h3>Book 5: The Prince</h3>
+                <p>A young royal in the floating kingdom of Koh-i-Noor who discovers the rot within his kingdom's soul.</p>
             </div>
         </div>
     </section>
+
     <section id="projects">
-        <h2>Currently In Development</h2>
+        <h2>In Development</h2>
         <div class="grid">
-            <div class="card">
+            <div class="card" style="text-align: center;">
                 <h3>Reworking Act 4</h3>
-                <p>Building the next chapter of the Solaria saga, one scene at a time.</p>
-                <a href="https://www.reddit.com/r/DomoAI/comments/1rmcn9l/reworking_act_4_one_scene_at_a_time/" class="btn">View Project</a>
+                <p>Building the next chapter of the Solaria saga, one scene at a time. Follow the journey on Reddit.</p>
+                <a href="https://www.reddit.com/r/DomoAI/comments/1rmcn9l/reworking_act_4_one_scene_at_a_time/" class="btn"><i class="fab fa-reddit"></i> View Project</a>
             </div>
         </div>
     </section>
+
     <section id="episodes">
         <h2>Cinematic Episodes</h2>
         <div class="grid">
-            <div class="card"><h3>We Were Sisters Once</h3><a href="https://www.youtube.com/watch?v=ieATtHwFqbc" class="btn">Watch on YouTube</a></div>
-            <div class="card"><h3>The Final Stand</h3><a href="https://www.youtube.com/watch?v=gsR3gCIZgBY" class="btn">Watch on YouTube</a></div>
+            <div class="card">
+                <h3>We Were Sisters Once</h3>
+                <a href="https://www.youtube.com/watch?v=ieATtHwFqbc" class="btn"><i class="fab fa-youtube"></i> Watch Episode</a>
+            </div>
+            <div class="card">
+                <h3>The Final Stand</h3>
+                <a href="https://www.youtube.com/watch?v=gsR3gCIZgBY" class="btn"><i class="fab fa-youtube"></i> Watch Episode</a>
+            </div>
         </div>
     </section>
+
     <section id="music">
         <h2>Original Soundtracks</h2>
         <div class="grid">
-            <div class="card"><h3>Krā ti</h3><a href="https://suno.com/s/mpDLlgIc6vUkiuHr" class="btn">Listen on Suno</a></div>
-            <div class="card"><h3>Main Theme</h3><a href="https://suno.com/@solarianearl" class="btn">View All Music</a></div>
+            <div class="card">
+                <h3>Krā ti</h3>
+                <a href="https://suno.com/s/mpDLlgIc6vUkiuHr" class="btn"><i class="fas fa-music"></i> Listen on Suno</a>
+            </div>
+            <div class="card">
+                <h3>Complete Score</h3>
+                <a href="https://suno.com/@solarianearl" class="btn"><i class="fas fa-play"></i> View All Music</a>
+            </div>
         </div>
     </section>
-    <footer id="support" class="social-footer">
-        <h2>Follow & Support</h2>
+
+    <section id="support" class="social-footer">
+        <h2>Join the Community</h2>
         <div class="social-links">
-            <a href="https://www.tiktok.com/@solarianearl" class="social-btn">TikTok @solarianearl</a>
-            <a href="https://ko-fi.com/solarianearl" class="social-btn">Support on Ko-fi</a>
+            <a href="https://www.tiktok.com/@solarianearl" class="social-btn"><i class="fab fa-tiktok"></i> TikTok</a>
+            <a href="https://ko-fi.com/solarianearl" class="social-btn"><i class="fas fa-coffee"></i> Support on Ko-fi</a>
+            <a href="https://github.com/SolarianEarl0s/talesofsolaria/wiki" class="social-btn"><i class="fas fa-book"></i> Lore Wiki</a>
         </div>
-        <p>&copy; 2026 Tales of Solaria</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Tales of Solaria. Created by Adrian Carter. All rights reserved.</p>
     </footer>
 </body>
 </html>
