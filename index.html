@@ -129,50 +129,44 @@
             text-align: center;
         }
 
-        /* About Section */
-        .about p {
-            font-size: 1.2rem;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-            line-height: 1.8;
-        }
-
-        /* Latest Episodes */
-        .episodes-grid {
+        /* Content Grids */
+        .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
 
-        .episode-card {
+        .card {
             background: rgba(26, 26, 46, 0.6);
             border: 2px solid #ff6b35;
             border-radius: 10px;
             padding: 1.5rem;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        .episode-card:hover {
+        .card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
         }
 
-        .episode-card h3 {
+        .card h3 {
             font-family: 'Cinzel', serif;
             font-size: 1.5rem;
             color: #ffb84d;
             margin-bottom: 1rem;
         }
 
-        .episode-card p {
+        .card p {
             font-size: 1rem;
             color: #b0b0b0;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
 
-        .episode-link {
+        .btn {
             display: inline-block;
             padding: 0.75rem 1.5rem;
             background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
@@ -180,12 +174,25 @@
             text-decoration: none;
             border-radius: 5px;
             font-weight: 600;
+            text-align: center;
             transition: all 0.3s ease;
         }
 
-        .episode-link:hover {
+        .btn:hover {
             background: linear-gradient(135deg, #f7931e 0%, #ff6b35 100%);
             transform: scale(1.05);
+        }
+
+        /* Projects Section specific */
+        .project-tag {
+            display: inline-block;
+            font-size: 0.8rem;
+            background: #ff6b35;
+            color: #0f0f1e;
+            padding: 2px 8px;
+            border-radius: 3px;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
         }
 
         /* Social Links */
@@ -193,10 +200,6 @@
             background: #1a1a2e;
             padding: 3rem 2rem;
             text-align: center;
-        }
-
-        .social-footer h2 {
-            margin-bottom: 2rem;
         }
 
         .social-links {
@@ -230,11 +233,6 @@
         .kofi-btn {
             background: linear-gradient(135deg, #29abe0 0%, #00b9fe 100%);
             border-color: #29abe0;
-            font-size: 1.1rem;
-        }
-
-        .kofi-btn:hover {
-            background: linear-gradient(135deg, #00b9fe 0%, #29abe0 100%);
         }
 
         /* Footer */
@@ -246,28 +244,25 @@
             font-size: 0.9rem;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
-            .hero p { font-size: 1.2rem; }
             section { padding: 3rem 1rem; }
-            section h2 { font-size: 2rem; }
             nav ul { gap: 1rem; }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav>
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="#projects">Work In Progress</a></li>
             <li><a href="#episodes">Episodes</a></li>
+            <li><a href="#music">Music</a></li>
             <li><a href="#support">Support</a></li>
         </ul>
     </nav>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>Tales of Solaria</h1>
@@ -275,7 +270,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="about">
         <h2>Welcome to Solaria</h2>
         <p>
@@ -285,51 +279,81 @@
         </p>
     </section>
 
-    <!-- Episodes Section -->
-    <section id="episodes">
-        <h2>Latest Episodes</h2>
-        <div class="episodes-grid">
-            <div class="episode-card">
-                <h3>Reworking Act 4 Finale</h3>
-                <p>The climactic conclusion to Book 4, reimagined with enhanced visuals and storytelling.</p>
-                <a href="https://www.reddit.com/r/PF2E_AI/comments/1rk7002/reworking_act_4_finale/" class="episode-link" target="_blank">Watch Now</a>
+    <section id="projects">
+        <h2>Currently In Development</h2>
+        <div class="grid">
+            <div class="card">
+                <div>
+                    <span class="project-tag">LATEST WIP</span>
+                    <h3>Reworking Act 4</h3>
+                    <p>Building the next chapter of the Solaria saga, one scene at a time. Featuring original music and enhanced AI cinematic techniques.</p>
+                </div>
+                <a href="https://www.reddit.com/r/DomoAI/comments/1rmcn9l/reworking_act_4_one_scene_at_a_time/" class="btn" target="_blank">View Project</a>
             </div>
-            <div class="episode-card">
-                <h3>2nd Chance – Untethered</h3>
-                <p>An original soundtrack piece exploring themes of redemption and freedom.</p>
-                <a href="https://www.reddit.com/r/PF2E_AI/comments/1rie6vu/2nd_chance_untethered/" class="episode-link" target="_blank">Listen Now</a>
-            </div>
-            <div class="episode-card">
-                <h3>Rose's Dream</h3>
-                <p>A visual journey through one character's inner world, rendered in stunning detail.</p>
-                <a href="https://www.reddit.com/r/PF2E_AI/comments/1rgfu0n/roses_dream/" class="episode-link" target="_blank">View Gallery</a>
+            <div class="card">
+                <div>
+                    <span class="project-tag">FINALE PREVIEW</span>
+                    <h3>Act 4 Finale</h3>
+                    <p>A deep dive into the conclusion of the current book. Releasing in tiny parts to ensure peak cinematic quality.</p>
+                </div>
+                <a href="https://www.reddit.com/r/PF2E_AI/comments/1rk7002/reworking_act_4_finale/" class="btn" target="_blank">See Latest Part</a>
             </div>
         </div>
     </section>
 
-    <!-- Social & Support -->
+    <section id="episodes">
+        <h2>Cinematic Episodes</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>We Were Sisters Once</h3>
+                <p>A dramatic exploration of the bond and conflict between characters.</p>
+                <a href="https://www.youtube.com/watch?v=ieATtHwFqbc" class="btn" target="_blank">Watch on YouTube</a>
+            </div>
+            <div class="card">
+                <h3>The Final Stand</h3>
+                <p>Epic confrontation and cinematic action sequences.</p>
+                <a href="https://www.youtube.com/watch?v=gsR3gCIZgBY" class="btn" target="_blank">Watch on YouTube</a>
+            </div>
+            <div class="card">
+                <h3>Echoes of Solaria</h3>
+                <p>Deepening the lore and atmosphere of the world.</p>
+                <a href="https://www.youtube.com/watch?v=tAqn5_2oRig" class="btn" target="_blank">Watch on YouTube</a>
+            </div>
+            <div class="card">
+                <h3>Visions of Destiny</h3>
+                <p>Character-focused narrative highlights and visual storytelling.</p>
+                <a href="https://www.youtube.com/watch?v=yzHbd7MOpC4" class="btn" target="_blank">Watch on YouTube</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="music">
+        <h2>Original Soundtracks</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Krā ti</h3>
+                <p>Featured in the latest Act 4 scenes. A hauntingly beautiful orchestral piece.</p>
+                <a href="https://suno.com/s/mpDLlgIc6vUkiuHr" class="btn" target="_blank">Listen on Suno</a>
+            </div>
+            <div class="card">
+                <h3>Solaria Main Theme</h3>
+                <p>The epic sound of a world in motion.</p>
+                <a href="https://suno.com/@solarianearl" class="btn" target="_blank">View All Music</a>
+            </div>
+        </div>
+    </section>
+
     <section id="support" class="social-footer">
         <h2>Follow & Support</h2>
         <div class="social-links">
-            <a href="https://www.tiktok.com/@solarianearl" class="social-btn" target="_blank">
-                <span>🎵</span> TikTok: @solarianearl
-            </a>
-            <a href="https://www.tiktok.com/@kentoclark" class="social-btn" target="_blank">
-                <span>🎵</span> TikTok: @kentoclark
-            </a>
-            <a href="https://www.youtube.com/@Game4Digital" class="social-btn" target="_blank">
-                <span>📺</span> YouTube
-            </a>
-            <a href="https://www.reddit.com/user/l1vi/" class="social-btn" target="_blank">
-                <span>🖼️</span> Reddit Gallery
-            </a>
+            <a href="https://www.tiktok.com/@solarianearl" class="social-btn" target="_blank">TikTok: @solarianearl</a>
+            <a href="https://www.tiktok.com/@kentoclark" class="social-btn" target="_blank">TikTok: @kentoclark</a>
+            <a href="https://www.youtube.com/@Game4Digital" class="social-btn" target="_blank">YouTube</a>
+            <a href="https://www.reddit.com/user/l1vi/" class="social-btn" target="_blank">Reddit Gallery</a>
         </div>
-        <a href="https://ko-fi.com/solarianearl" class="social-btn kofi-btn" target="_blank">
-            <span>☕</span> Support on Ko-fi
-        </a>
+        <a href="https://ko-fi.com/solarianearl" class="social-btn kofi-btn" target="_blank">Support on Ko-fi</a>
     </section>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2026 Tales of Solaria. All rights reserved.</p>
     </footer>
